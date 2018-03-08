@@ -1,0 +1,151 @@
+[
+    {
+        "type": "container",
+        "title": "Apache Kafka",
+		"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "bigdatalabs/kafka_cloudera",
+        "logo":"https://i.imgur.com/GwJ8nUU.png",
+		"ports": [
+            "9091/tcp","9092/tcp","2181/tcp","22/tcp"
+        ]
+    },
+    {
+        "type": "container",
+        "title": "Apache Cassandra",
+		"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "bigdatalabs/cassandra:3.0",
+        "logo":"https://i.imgur.com/q59PBjU.png",
+		"ports": [
+            "7000/tcp","7001/tcp","7199/tcp","9042/tcp","9160/tcp","22/tcp"
+        ]
+    },
+    {
+        "type": "container",
+        "title": "Mysql",
+		"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "mysql/mysql-server:5.7",
+		"logo":"https://i.imgur.com/BUYoGN0.png",
+		"env":[
+			{
+				"name":"MYSQL_ROOT_PASSWORD",
+				"label": "MYSQL_ROOT_PASSWORD",
+				"description":"This variable specifies a password that is set for the MySQL root account."
+			}
+		],
+		"ports":["3306/tcp", "33060/tcp"]
+    },
+    {
+        "type": "container",
+        "title": "Apache Zeppelin",
+	 	"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "bigdatalabs/zeppelin_cloudera",
+		"logo":"https://i.imgur.com/ZyAGexS.png",
+        "ports": [
+            "8080/tcp","22/tcp"
+        ]
+    },
+    {
+        "type": "container",
+        "title": "Apache Spark Master",
+	 	"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "bigdatalabs/spark_master_cloudera",
+		"logo":"https://i.imgur.com/jvAt6LQ.png",
+        "ports": [
+            "8080/tcp","22/tcp","7077/tcp"
+        ],
+        "env": [
+	    {
+                "name":"SLAVES",
+                "label": "SLAVES IPs",
+                "description":"Specify slave containers IPs."
+            }
+        ]
+    },
+    {
+        "type": "container",
+        "title": "Apache Spark Slave",
+	 	"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "bigdatalabs/spark_slave_cloudera",
+		"logo":"https://i.imgur.com/jvAt6LQ.png",
+        "ports": [
+            "22/tcp"
+        ]
+    },
+    {
+        "type": "container",
+        "title": "Apache Hive",
+		"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "bigdatalabs/portainer_hive:2.3.0",
+		"logo":"https://i.imgur.com/7SruW6E.png",
+        "ports": [
+            "3306/tcp","10002/tcp","22/tcp","10000/tcp"
+        ],
+        "env": [
+            {
+		"name":"HDFS_HOSTNAME",
+		"label":"IP address of Hadoop Namenode",
+		"description":"IP address of Hadoop Namenode"
+            }
+        ]
+    },
+    {
+        "type": "container",
+        "title": "Streamsets",
+		"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "bigdatalabs/streamsets",
+		"logo":"https://i.imgur.com/eB0ZHu7.png",
+        "ports": [
+            "18630/tcp","22/tcp"
+        ]
+    },
+    {
+        "type": "container",
+        "title": "single node HDFS",
+		"network":"BigDataLabNetwork",
+        "description": "BigDataLabs Apache Package",
+        "categories": ["BigDataLab", "BigDataLab Apache Package"],
+        "platform": "ubuntu_16.04",
+        "image": "bigdatalabs/portainer_hadoop:2.7.4",
+		"logo":"https://i.imgur.com/iHElqQl.png",
+        "ports": [
+            "50010/tcp","50020/tcp","50070/tcp","50075/tcp","50090/tcp","8020/tcp","9000/tcp","10020/tcp","19888/tcp","8030/tcp","8031/tcp","8032/tcp","8033/tcp","8040/tcp","8042/tcp","8088/tcp","22/tcp","2122/tcp"
+        ]
+    },
+	{
+		"type": "container",
+		"title": "One-Click Machine Learning",
+		"network":"BigDataLabNetwork",
+		"description": "All necessary packages to get you started with ML",
+		"categories": ["BigDataLab", "BigDataLab ML Package", "Tensorflow", "Keras", "Pytorch"],
+		"platform": "ubuntu_16.04",
+		"image": "bigdatalabs/machine_learning",
+		"logo":"https://i.imgur.com/5QF0IWf.png",
+		"ports": [
+			"3838/tcp","22/tcp","8888/tcp","6006/tcp","9999/tcp"
+		]
+	}
+]
